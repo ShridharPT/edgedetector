@@ -165,6 +165,100 @@ def get_algorithms():
     })
 
 
+@app.route('/api/compare', methods=['POST'])
+def compare_algorithms():
+    """Compare different edge detection algorithms on an image."""
+    try:
+        if 'image' not in request.files:
+            return jsonify({'error': 'No image file provided'}), 400
+        
+        file = request.files['image']
+        
+        if not allowed_file(file.filename):
+            return jsonify({'error': 'File type not allowed'}), 400
+        
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(filepath)
+        
+        detector = EdgeDetector(filepath)
+        detector.preprocess()
+        detector.apply_sobel()
+        detector.apply_laplacian()
+        detector.apply_canny()
+        
+        results = {
+            'algorithms': {
+                'sobel_x': image_to_base64(detector.sobel_x),
+                'sobel_y': image_to_base64(detector.sobel_y),
+                'sobel_combined': image_to_base64(detector.sobel_combined),
+                'laplacian': image_to_base64(detector.laplacian),
+                'canny': image_to_base64(detector.canny)
+            }
+        }
+        
+        os.remove(filepath)
+        return jsonify(results)
+    
+    except Exception as e:
+        logger.error(f"Comparison error: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/analyze', methods=['POST'])
+def analyze_image():
+    """Analyze image properties and statistics."""
+    try:
+        if 'image' not in request.files:
+            return jsonify({'error': 'No image file provided'}), 400
+        
+        file = request.files['image']
+        
+        if not allowed_file(file.filename):
+            return jsonify({'error': 'File type not allowed'}), 400
+        
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(filepath)
+        
+        image = cv2.imread(filepath)
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        
+        results = {
+            'dimensions': {
+                'width': image.shape[1],
+                'height': image.shape[0],
+                'channels': image.shape[2] if len(image.shape) > 2 else 1
+            },
+            'statistics': {
+                'mean_brightness': float(np.mean(gray)),
+                'std_brightness': float(np.std(gray)),
+                'contrast': float(np.max(gray) - np.min(gray))
+            }
+        }
+        
+        os.remove(filepath)
+        return jsonify(results)
+    
+    except Exception as e:
+        logger.error(f"Analysis error: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/info', methods=['GET'])
+def get_info():
+    """Get service information."""
+    return jsonify({
+        'name': 'Edge Detection Service',
+        'version': '1.0.0',
+        'features': {
+            'algorithms': ['Sobel', 'Laplacian', 'Canny'],
+            'max_size_mb': web_config['max_upload_size'] / (1024 * 1024),
+            'formats': list(ALLOWED_EXTENSIONS)
+        }
+    })
+
+
 @app.errorhandler(413)
 def request_entity_too_large(error):
     """Handle file too large error."""

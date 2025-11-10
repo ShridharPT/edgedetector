@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Edge Detection System</title>
     <style>
         * {
@@ -16,6 +18,12 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
         }
         
         .container {
@@ -286,7 +294,7 @@
                 </p>
                 <button class="upload-btn" id="toggleWebcamBtn" onclick="toggleWebcam()">Start Webcam</button>
                 <div id="webcamContainer" style="display: none; margin-top: 15px;">
-                    <video id="webcam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px;"></video>
+                    <video id="webcam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px; object-fit: cover; transform: scaleX(-1);"></video>
                     <div style="display: flex; gap: 10px; margin-bottom: 10px;">
                         <button class="upload-btn" id="captureBtn" onclick="captureImage()" style="flex: 1;">Capture Image</button>
                         <button class="upload-btn" id="switchCameraBtn" onclick="switchCamera()" style="flex: 1; background: #667eea;">Switch Camera</button>
@@ -360,6 +368,13 @@
     </div>
     
     <script>
+        // Lock orientation to portrait on mobile
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('portrait-primary').catch(err => {
+                console.log('Orientation lock not supported:', err);
+            });
+        }
+        
         const imageInput = document.getElementById('imageInput');
         const processBtn = document.getElementById('processBtn');
         const loading = document.getElementById('loading');

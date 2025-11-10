@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project specific
+output/*
+!output/.gitkeep
+input/*
+!input/.gitkeep
+uploads/*
+results/*
+logs/*
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+coverage.xml
+
+# Environment
+.env
+config.local.yaml
+
+# OS
+.DS_Store
+Thumbs.db

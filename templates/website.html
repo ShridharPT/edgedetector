@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Detection System - Complete Dashboard</title>
+    <link rel="stylesheet" href="/static/website.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🔍 Edge Detection System</h1>
+            <p>Professional Image Processing Dashboard</p>
+            <div class="status-badge">✓ System Online</div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('single')">Single Image</button>
+            <button class="tab-btn" onclick="switchTab('batch')">Batch Processing</button>
+            <button class="tab-btn" onclick="switchTab('compare')">Compare</button>
+            <button class="tab-btn" onclick="switchTab('analyze')">Analysis</button>
+            <button class="tab-btn" onclick="switchTab('info')">System Info</button>
+        </div>
+        
+        <!-- Tab 1: Single Image -->
+        <div id="single" class="tab-content active">
+            <div class="content-grid">
+                <div class="card">
+                    <h2>📤 Upload Image</h2>
+                    <div class="upload-zone" id="dropZone">
+                        <p style="font-size: 18px; color: var(--primary); margin-bottom: 15px;">
+                            <strong>Drag & Drop your image</strong>
+                        </p>
+                        <input type="file" id="imageInput" accept="image/*">
+                        <label for="imageInput" class="upload-btn">Choose Image</label>
+                        <div id="preview" style="margin-top: 20px;"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>⚙️ Parameters</h2>
+                    <div class="parameters">
+                        <div class="param-group">
+                            <label>Blur Kernel</label>
+                            <input type="number" id="blurKernel" value="5" min="1" max="15" step="2">
+                        </div>
+                        <div class="param-group">
+                            <label>Sobel Kernel</label>
+                            <input type="number" id="sobelKernel" value="3" min="1" max="7" step="2">
+                        </div>
+                        <div class="param-group">
+                            <label>Laplacian Kernel</label>
+                            <input type="number" id="laplacianKernel" value="3" min="1" max="7" step="2">
+                        </div>
+                        <div class="param-group">
+                            <label>Canny T1</label>
+                            <input type="number" id="cannyT1" value="50" min="0" max="255">
+                        </div>
+                        <div class="param-group">
+                            <label>Canny T2</label>
+                            <input type="number" id="cannyT2" value="150" min="0" max="255">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="processBtn" disabled>Process Image</button>
+                </div>
+            </div>
+            
+            <div id="singleLoading" class="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 15px; color: var(--primary); font-weight: bold;">Processing...</p>
+            </div>
+            
+            <div id="singleError" class="message error"></div>
+            <div id="singleResults" class="results">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">📊 Results</h2>
+                <div class="results-grid" id="singleResultsGrid"></div>
+            </div>
+        </div>
+        
+        <!-- Tab 2: Batch -->
+        <div id="batch" class="tab-content">
+            <div class="card">
+                <h2>📦 Batch Processing</h2>
+                <div class="upload-zone" id="batchDropZone">
+                    <p style="font-size: 18px; color: var(--primary);">Drop multiple images</p>
+                    <input type="file" id="batchInput" accept="image/*" multiple>
+                    <label for="batchInput" class="upload-btn">Choose Images</label>
+                </div>
+                <button class="btn btn-primary" id="batchProcessBtn" disabled style="margin-top: 20px;">Process All</button>
+            </div>
+            <div id="batchLoading" class="loading"><div class="spinner"></div></div>
+            <div id="batchResults" class="results">
+                <div class="results-grid" id="batchResultsGrid"></div>
+            </div>
+        </div>
+        
+        <!-- Tab 3: Compare -->
+        <div id="compare" class="tab-content">
+            <div class="card">
+                <h2>🔄 Compare Algorithms</h2>
+                <div class="upload-zone" id="compareDropZone">
+                    <input type="file" id="compareInput" accept="image/*">
+                    <label for="compareInput" class="upload-btn">Choose Image</label>
+                </div>
+                <button class="btn btn-primary" id="compareBtn" disabled style="margin-top: 20px;">Compare</button>
+            </div>
+            <div id="compareLoading" class="loading"><div class="spinner"></div></div>
+            <div id="compareResults" class="results">
+                <div class="results-grid" id="compareResultsGrid"></div>
+            </div>
+        </div>
+        
+        <!-- Tab 4: Analyze -->
+        <div id="analyze" class="tab-content">
+            <div class="card">
+                <h2>📈 Image Analysis</h2>
+                <div class="upload-zone" id="analyzeDropZone">
+                    <input type="file" id="analyzeInput" accept="image/*">
+                    <label for="analyzeInput" class="upload-btn">Choose Image</label>
+                </div>
+                <button class="btn btn-primary" id="analyzeBtn" disabled style="margin-top: 20px;">Analyze</button>
+            </div>
+            <div id="analyzeLoading" class="loading"><div class="spinner"></div></div>
+            <div id="analyzeResults" class="results" style="display: block;">
+                <div id="analyzeStats"></div>
+            </div>
+        </div>
+        
+        <!-- Tab 5: Info -->
+        <div id="info" class="tab-content">
+            <div class="card">
+                <h2>ℹ️ System Information</h2>
+                <div id="systemInfo"></div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Edge Detection System v2.0</strong></p>
+            <p>Sobel • Laplacian • Canny</p>
+        </div>
+    </div>
+    
+    <script src="/static/website.js"></script>
+</body>
+</html>

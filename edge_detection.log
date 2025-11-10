@@ -1,0 +1,150 @@
+2025-11-10 11:20:02,244 - web_app - INFO - Starting Edge Detection API server on 0.0.0.0:5000
+2025-11-10 11:26:36,111 - website - INFO - Starting Unified Edge Detection Website on 0.0.0.0:5000
+2025-11-10 11:39:40,445 - web_app - INFO - Starting Edge Detection API server on 0.0.0.0:5000
+2025-11-10 11:41:28,491 - web_app - INFO - Starting Edge Detection API server on 0.0.0.0:5000
+2025-11-10 11:46:03,883 - web_app - INFO - Starting Edge Detection API server on 0.0.0.0:5000
+2025-11-10 11:47:02,537 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:47:02,679 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:48:51,944 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:48:51,977 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 107, in detect_edges
+    detector.preprocess(blur_kernel_size=(blur_size, blur_size), sigma=1.4)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 59, in preprocess
+    self.blurred_image = cv2.GaussianBlur(self.gray_image, blur_kernel_size, sigma)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+
+2025-11-10 11:49:04,904 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:49:04,926 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 107, in detect_edges
+    detector.preprocess(blur_kernel_size=(blur_size, blur_size), sigma=1.4)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 59, in preprocess
+    self.blurred_image = cv2.GaussianBlur(self.gray_image, blur_kernel_size, sigma)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+
+2025-11-10 11:49:05,815 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:49:05,833 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 107, in detect_edges
+    detector.preprocess(blur_kernel_size=(blur_size, blur_size), sigma=1.4)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 59, in preprocess
+    self.blurred_image = cv2.GaussianBlur(self.gray_image, blur_kernel_size, sigma)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+
+2025-11-10 11:49:28,858 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:49:28,882 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 107, in detect_edges
+    detector.preprocess(blur_kernel_size=(blur_size, blur_size), sigma=1.4)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 59, in preprocess
+    self.blurred_image = cv2.GaussianBlur(self.gray_image, blur_kernel_size, sigma)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+
+2025-11-10 11:50:39,647 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:50:39,673 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 107, in detect_edges
+    detector.preprocess(blur_kernel_size=(blur_size, blur_size), sigma=1.4)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 59, in preprocess
+    self.blurred_image = cv2.GaussianBlur(self.gray_image, blur_kernel_size, sigma)
+                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\smooth.dispatch.cpp:294: error: (-215:Assertion failed) ksize.width > 0 && ksize.width % 2 == 1 && ksize.height > 0 && ksize.height % 2 == 1 in function 'cv::createGaussianKernels'
+
+2025-11-10 11:51:18,012 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:51:18,051 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:51:34,959 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:51:35,022 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:51:47,387 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:51:47,434 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:51:59,884 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:51:59,931 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:52:05,090 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:52:05,129 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:52:11,412 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:52:11,454 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:52:29,301 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:52:29,358 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:52:37,552 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:52:37,591 - web_app - INFO - Successfully processed image: test_image.jpg
+2025-11-10 11:52:54,504 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:52:54,534 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\matrix.cpp:246: error: (-215:Assertion failed) s >= 0 in function 'cv::setSize'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 109, in detect_edges
+    detector.apply_laplacian(kernel_size=laplacian_kernel)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 97, in apply_laplacian
+    self.laplacian = cv2.Laplacian(self.blurred_image, cv2.CV_64F, ksize=kernel_size)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\core\src\matrix.cpp:246: error: (-215:Assertion failed) s >= 0 in function 'cv::setSize'
+
+2025-11-10 11:53:03,929 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:53:03,955 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\deriv.cpp:103: error: (-211:One of the arguments' values is out of range) The kernel size must be odd and not larger than 31 in function 'cv::getSobelKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 109, in detect_edges
+    detector.apply_laplacian(kernel_size=laplacian_kernel)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 97, in apply_laplacian
+    self.laplacian = cv2.Laplacian(self.blurred_image, cv2.CV_64F, ksize=kernel_size)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\deriv.cpp:103: error: (-211:One of the arguments' values is out of range) The kernel size must be odd and not larger than 31 in function 'cv::getSobelKernels'
+
+2025-11-10 11:53:17,199 - web_app - INFO - Processing image: test_image.jpg
+2025-11-10 11:53:17,228 - web_app - ERROR - Error processing image: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\deriv.cpp:103: error: (-211:One of the arguments' values is out of range) The kernel size must be odd and not larger than 31 in function 'cv::getSobelKernels'
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 109, in detect_edges
+    detector.apply_laplacian(kernel_size=laplacian_kernel)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 97, in apply_laplacian
+    self.laplacian = cv2.Laplacian(self.blurred_image, cv2.CV_64F, ksize=kernel_size)
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cv2.error: OpenCV(4.12.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\deriv.cpp:103: error: (-211:One of the arguments' values is out of range) The kernel size must be odd and not larger than 31 in function 'cv::getSobelKernels'
+
+2025-11-10 11:53:33,865 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:53:33,906 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:07,967 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:08,004 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:12,970 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:13,008 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:18,793 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:18,842 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:30,282 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:30,325 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:37,586 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:37,632 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:46,328 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:46,375 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:54:57,224 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:54:57,269 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:55:15,210 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:55:15,252 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:55:26,597 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:55:26,619 - web_app - ERROR - Error processing image: [Errno 22] Invalid argument
+Traceback (most recent call last):
+  File "D:\edgedetection\app.py", line 108, in detect_edges
+    detector.apply_sobel(kernel_size=sobel_kernel)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\edgedetection\edge_detection.py", line 71, in apply_sobel
+    print("\nApplying Sobel edge detection...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2025-11-10 11:55:35,378 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:55:35,434 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:55:45,708 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:55:45,743 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 11:55:53,353 - web_app - INFO - Processing image: test.jpeg
+2025-11-10 11:55:53,401 - web_app - INFO - Successfully processed image: test.jpeg
+2025-11-10 12:01:48,481 - web_app - INFO - Starting Edge Detection API server on 0.0.0.0:5000
+2025-11-10 12:02:22,325 - web_app - INFO - Processing image: webcam_capture.jpg
+2025-11-10 12:02:22,402 - web_app - INFO - Successfully processed image: webcam_capture.jpg
+2025-11-10 12:02:52,468 - web_app - INFO - Processing image: webcam_capture.jpg
+2025-11-10 12:02:52,533 - web_app - INFO - Successfully processed image: webcam_capture.jpg

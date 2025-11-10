@@ -1,0 +1,43 @@
+# Edge Detection Configuration File
+
+# Preprocessing settings
+preprocessing:
+  blur_kernel_size: [5, 5]
+  sigma: 1.4
+
+# Edge detection parameters
+edge_detection:
+  sobel:
+    kernel_size: 3
+  
+  laplacian:
+    kernel_size: 3
+  
+  canny:
+    threshold1: 50
+    threshold2: 150
+
+# Output settings
+output:
+  directory: "output"
+  format: "jpg"
+  quality: 95
+
+# Logging settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "edge_detection.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Web API settings
+web:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+  max_upload_size: 16777216  # 16 MB in bytes
+  allowed_extensions: ["jpg", "jpeg", "png", "bmp", "gif"]
+
+# Performance settings
+performance:
+  enable_gpu: false
+  max_workers: 4

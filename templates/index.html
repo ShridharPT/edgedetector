@@ -294,7 +294,7 @@
                 </p>
                 <button class="upload-btn" id="toggleWebcamBtn" onclick="toggleWebcam()">Start Webcam</button>
                 <div id="webcamContainer" style="display: none; margin-top: 15px;">
-                    <video id="webcam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px; object-fit: cover; transform: scaleX(-1);"></video>
+                    <video id="webcam" style="width: 100%; max-width: 300px; border-radius: 10px; margin-bottom: 10px; object-fit: cover;"></video>
                     <div style="display: flex; gap: 10px; margin-bottom: 10px;">
                         <button class="upload-btn" id="captureBtn" onclick="captureImage()" style="flex: 1;">Capture Image</button>
                         <button class="upload-btn" id="switchCameraBtn" onclick="switchCamera()" style="flex: 1; background: #667eea;">Switch Camera</button>
@@ -421,6 +421,14 @@
                 const video = document.getElementById('webcam');
                 video.srcObject = stream;
                 video.play();
+                
+                // Apply mirror flip only for front camera
+                if (currentFacingMode === 'user') {
+                    video.style.transform = 'scaleX(-1)';
+                } else {
+                    video.style.transform = 'scaleX(1)';
+                }
+                
                 webcamStream = stream;
                 container.style.display = 'block';
                 btn.textContent = 'Webcam Active';

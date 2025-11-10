@@ -105,6 +105,7 @@ document.getElementById('processBtn').addEventListener('click', async () => {
     
     try {
         const response = await fetch('/api/detect', { method: 'POST', body: formData });
+        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         const data = await response.json();
         
         if (data.success) {
@@ -130,6 +131,7 @@ document.getElementById('batchProcessBtn').addEventListener('click', async () =>
     
     try {
         const response = await fetch('/api/batch-detect', { method: 'POST', body: formData });
+        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         const data = await response.json();
         
         if (data.success) {
@@ -155,6 +157,7 @@ document.getElementById('compareBtn').addEventListener('click', async () => {
     
     try {
         const response = await fetch('/api/compare', { method: 'POST', body: formData });
+        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         const data = await response.json();
         displayComparison(data);
     } catch (err) {
@@ -175,6 +178,7 @@ document.getElementById('analyzeBtn').addEventListener('click', async () => {
     
     try {
         const response = await fetch('/api/analyze', { method: 'POST', body: formData });
+        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         const data = await response.json();
         displayAnalysis(data);
     } catch (err) {
@@ -280,7 +284,10 @@ function displayAnalysis(data) {
 
 function loadSystemInfo() {
     fetch('/api/info')
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) throw new Error(`HTTP ${r.status}`);
+            return r.json();
+        })
         .then(data => {
             const info = document.getElementById('systemInfo');
             info.innerHTML = `
@@ -290,6 +297,9 @@ function loadSystemInfo() {
                 <p><strong>Max Upload:</strong> ${data.features.max_size_mb} MB</p>
                 <p><strong>Formats:</strong> ${data.features.formats.join(', ')}</p>
             `;
+        })
+        .catch(err => {
+            console.error('Failed to load system info:', err);
         });
 }
 
